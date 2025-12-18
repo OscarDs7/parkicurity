@@ -15,8 +15,25 @@ The main goal is to **improve security, control, and decision-making** in parkin
   - 🌡️ Ambient temperature  
   - 💧 Relative humidity  
   - 📏 Distance (object detection / parking occupancy)
+- Real-time updates using `ValueEventListener`
+- Safe data type conversion (`Int`, `Double` → `Float`)
 
-- Intelligent recommendations based on a **neural network trained in Python**, whose results are retrieved from Firebase Realtime Database.
+### 🔹 AI-Based Recommendations System
+
+The application consumes **AI-generated recommendations** stored in Firebase.  
+These recommendations are produced by a **neural network trained in Python** and sent to Firebase for real-time consumption by the mobile app.
+
+#### Firebase Recommendations Structure
+
+```json
+Recomendaciones
+ ├── distancia: 83
+ ├── estado: 0
+ ├── humedad: 55
+ ├── mensaje: "✓ Everything is under safe conditions"
+ ├── nivel_intrusion: 0
+ ├── temperatura: 28
+ └── timestamp: 1764717220
 
 ### 🔹 Professional Dashboard
 
