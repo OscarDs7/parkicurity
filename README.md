@@ -1,96 +1,100 @@
-# 🚗 Parkicurity System
+🚗 Parkicurity System
 
-**Parkicurity System** es una aplicación móvil Android orientada a la **monitoreo inteligente de estacionamientos** mediante sensores IoT y visualización de datos en tiempo real. El proyecto integra **Firebase Realtime Database**, análisis estadístico, visualización gráfica y una arquitectura moderna basada en **Fragments + ViewPager2 + BottomNavigation**.
+Parkicurity System is an Android mobile application focused on intelligent parking monitoring using IoT sensors and real-time data visualization. The project integrates Firebase Realtime Database, statistical analysis, graphical visualization, and a modern architecture based on Fragments + ViewPager2 + BottomNavigation.
 
-El objetivo principal es **mejorar la seguridad, control y toma de decisiones** dentro de estacionamientos mediante información clara, confiable y visualmente profesional.
+The main goal is to improve security, control, and decision-making in parking facilities through clear, reliable, and professionally presented information.
 
----
+📱 Main Features
+🔹 Real-time Monitoring
 
-## 📱 Características principales
+Continuous sensor data reading from Firebase Realtime Database
 
-### 🔹 Monitoreo en tiempo real
+Currently implemented sensors:
 
-* Lectura continua de sensores desde **Firebase Realtime Database**
-* Sensores actualmente implementados:
+🌡️ Ambient temperature
 
-  * 🌡️ Temperatura ambiente
-  * 💧 Humedad relativa
-  * 📏 Distancia (detección de objetos / ocupación)
-    
-* Recomendaciones inteligentes basadas en el entrenamiento de una red neuronal programada en Python y recibidas desde Firebase Realtime Database.
+💧 Relative humidity
 
-### 🔹 Dashboard profesional
+📏 Distance (object detection / parking occupancy)
 
-* Interfaz tipo **dashboard oscuro/moderno**
-* Tarjetas (MaterialCardView) con diseño limpio y profesional
-* Datos organizados por sensor y métricas
+Intelligent recommendations based on a neural network trained in Python, whose results are retrieved from Firebase Realtime Database.
 
-### 🔹 Estadísticas avanzadas
+🔹 Professional Dashboard
 
-Para cada sensor se calculan:
+Dark / modern dashboard-style interface
 
-* Media
-* Valor mínimo
-* Valor máximo
-* Varianza
-* Desviación estándar
+Clean and professional MaterialCardView cards
 
-Además:
+Data organized by sensor and metrics
 
-* Filtrado de **outliers (±3σ)**
-* Interpretación automática del estado del sensor
+🔹 Advanced Statistics
 
-### 🔹 Visualización gráfica
+For each sensor, the following metrics are calculated:
 
-* Gráficas de línea con **MPAndroidChart**
-* Puntos visibles por medición (círculos)
-* Zoom, desplazamiento y actualización en tiempo real
+Mean
 
-### 🔹 Navegación fluida
+Minimum value
 
-* **BottomNavigationView**
-* **ViewPager2** para navegación por swipe (izquierda / derecha)
-* Sin recargas innecesarias de fragments
+Maximum value
 
----
+Variance
 
-## 🧭 Estructura de navegación
+Standard deviation
 
-| Pestaña      | Descripción                           |
-| ------------ | ------------------------------------- |
-| Sensores     | Valores actuales de cada sensor       |
-| Gráficos     | Visualización histórica de datos      |
-| Estadísticas | Análisis estadístico e interpretación |
+Additionally:
 
----
+Outlier filtering (±3σ)
 
-## 🏗️ Arquitectura
+Automatic sensor state interpretation
 
-* **Lenguaje:** Kotlin
-* **Patrón:** UI basada en Fragments
-* **Navegación:**
+🔹 Data Visualization
 
-  * ViewPager2
-  * BottomNavigationView
-* **Base de datos:** Firebase Realtime Database
-* **Visualización:** MPAndroidChart
+Line charts using MPAndroidChart
 
-```text
+Visible data points (circles) for each measurement
+
+Zoom, scrolling, and real-time updates
+
+🔹 Smooth Navigation
+
+BottomNavigationView
+
+ViewPager2 for swipe navigation (left / right)
+
+No unnecessary fragment reloads
+
+🧭 Navigation Structure
+Tab	Description
+Sensors	Current values of each sensor
+Charts	Historical data visualization
+Statistics	Statistical analysis and interpretation
+🏗️ Architecture
+
+Language: Kotlin
+
+Pattern: Fragment-based UI
+
+Navigation:
+
+ViewPager2
+
+BottomNavigationView
+
+Database: Firebase Realtime Database
+
+Charts: MPAndroidChart
+
 MainActivity
  ├── ViewPager2
  │    ├── SensoresFragment
  │    ├── GraficosFragment
  │    └── EstadisticasFragment
  └── BottomNavigationView
-```
 
----
+🔥 Firebase
 
-## 🔥 Firebase
+Data structure used:
 
-Estructura de datos utilizada:
-
-```json
 Lecturas
  └── Sensores
       ├── Ambiente
@@ -98,76 +102,82 @@ Lecturas
       │    └── humedad_%
       └── Estacionamiento
            └── distancia_cm
-```
 
-* Escucha en tiempo real con `ValueEventListener`
-* Conversión segura de tipos (`Double`, `Int` → `Float`)
 
----
+Real-time listening using ValueEventListener
 
-## 📊 Lógica de estadísticas
+Safe type conversion (Double, Int → Float)
 
-Cada sensor mantiene una ventana deslizante de hasta **200 datos**:
+📊 Statistical Logic
 
-* Se eliminan datos antiguos
-* Se filtran valores atípicos
-* Se calculan métricas estadísticas
-* Se generan interpretaciones automáticas
+Each sensor maintains a sliding window of up to 200 data points:
 
-Ejemplo de interpretación:
+Old data is removed
 
-* Temperatura muy alta → ⚠️ Riesgo de sobrecalentamiento
-* Alta desviación estándar → ⚠️ Datos inestables
+Outliers are filtered
 
----
+Statistical metrics are calculated
 
-## 🎨 Diseño UI/UX
+Automatic interpretations are generated
 
-* Material Design 3
-* Colores contrastados (modo oscuro)
-* Íconos claros y consistentes
-* Separación clara entre etiquetas y valores
-* Datos alineados para mejor legibilidad
+Interpretation examples:
 
----
+Very high temperature → ⚠️ Overheating risk
 
-## 🧪 Estado del proyecto
+High standard deviation → ⚠️ Unstable data
 
-* ✅ Arquitectura base implementada
-* ✅ Firebase conectado
-* ✅ Gráficas funcionales
-* ✅ Estadísticas correctas
-* 🔄 En expansión (alertas, históricos, IA)
+🎨 UI/UX Design
 
----
+Material Design 3
 
-## 🚀 Posibles mejoras futuras
+High-contrast colors (dark mode)
 
-* 🔔 Alertas push por valores críticos
-* 📈 Exportación de datos
-* ☁️ Backend propio (API REST)
-* 👥 Gestión de usuarios y roles
-  
----
+Clear and consistent icons
 
-## 🛠️ Tecnologías utilizadas
+Clear separation between labels and values
 
-* Kotlin
-* Android SDK
-* Firebase Realtime Database
-* MPAndroidChart
-* Material Components
+Aligned data for better readability
 
----
+🧪 Project Status
 
-## 👨‍💻 Autor
+✅ Base architecture implemented
 
-**Oscar Eduardo Romero Escamilla**
+✅ Firebase connected
 
-Proyecto académico / profesional enfocado en IoT, análisis de datos y desarrollo móvil.
+✅ Functional charts
 
----
+✅ Correct statistical calculations
 
-## 📄 Licencia
+🔄 Under expansion (alerts, history, AI)
 
-Este proyecto se encuentra bajo uso académico / experimental. Puede adaptarse o extenderse con fines educativos.
+🚀 Possible Future Improvements
+
+🔔 Push notifications for critical values
+
+📈 Data export
+
+☁️ Custom backend (REST API)
+
+👥 User and role management
+
+🛠️ Technologies Used
+
+Kotlin
+
+Android SDK
+
+Firebase Realtime Database
+
+MPAndroidChart
+
+Material Components
+
+👨‍💻 Author
+
+Oscar Eduardo Romero Escamilla
+
+Academic / professional project focused on IoT, data analysis, and mobile development.
+
+📄 License
+
+This project is intended for academic / experimental use. It may be adapted or extended for educational purposes.
