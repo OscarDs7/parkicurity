@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_sensores"
+        android:icon="@drawable/sensor"
+        android:title="Sensores"
+        android:iconTint="@color/bottom_nav_icon_selector"/>
+    <item
+        android:id="@+id/nav_graficos"
+        android:icon="@drawable/grafico"
+        android:title="Gráficos"
+        android:iconTint="@color/bottom_nav_icon_selector"/>
+
+    <item
+        android:id="@+id/nav_estadisticas"
+        android:icon="@drawable/analitica"
+        android:title="Estadísticas"
+        android:iconTint="@color/bottom_nav_icon_selector"/>
+</menu>
