@@ -26,6 +26,7 @@ El objetivo principal es **mejorar la seguridad, control y toma de decisiones** 
 ### 🔹 Estadísticas avanzadas
 
 Para cada sensor se calculan:
+
 * Media
 * Valor mínimo
 * Valor máximo
@@ -33,6 +34,7 @@ Para cada sensor se calculan:
 * Desviación estándar
 
 Además:
+
 * Filtrado de **outliers (±3σ)**
 * Interpretación automática del estado del sensor
 
@@ -160,6 +162,7 @@ Ejemplo de interpretación:
 ## 👨‍💻 Autor
 
 **Oscar Eduardo Romero Escamilla**
+
 Proyecto académico / profesional enfocado en IoT, análisis de datos y desarrollo móvil.
 
 ---
