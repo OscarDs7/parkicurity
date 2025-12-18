@@ -16,6 +16,8 @@ El objetivo principal es **mejorar la seguridad, control y toma de decisiones** 
   * 🌡️ Temperatura ambiente
   * 💧 Humedad relativa
   * 📏 Distancia (detección de objetos / ocupación)
+    
+* Recomendaciones inteligentes basadas en el entrenamiento de una red neuronal programada en Python y recibidas desde Firebase Realtime Database.
 
 ### 🔹 Dashboard profesional
 
@@ -142,7 +144,6 @@ Ejemplo de interpretación:
 ## 🚀 Posibles mejoras futuras
 
 * 🔔 Alertas push por valores críticos
-* 🤖 Predicción con IA (tendencias)
 * 📈 Exportación de datos
 * ☁️ Backend propio (API REST)
 * 👥 Gestión de usuarios y roles
