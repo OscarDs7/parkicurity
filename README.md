@@ -34,6 +34,7 @@ Recomendaciones
  ├── nivel_intrusion: 0
  ├── temperatura: 28
  └── timestamp: 1764717220
+```
 
 ### 🔹 Professional Dashboard
 
